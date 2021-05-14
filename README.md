@@ -14,6 +14,7 @@ This widget is a rewrite of the original version based on Dojo: https://marketpl
 	- For the rest the description in the widget settings should be descriptive enough.
 
 WIDGET SETTINGS
+
 General - Appearance
 - Size: set the size of the Gauge chart. Can either be in different dimension (pixel, percentage, etc), see 'Dimension Unit';
 - Dimension: determine the dimension of the size here, so typical selection would be either px (pixel) or pc (percentage);
