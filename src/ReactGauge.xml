@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="first consulting.reactgauge.ReactGauge" pluginWidget="true" needsEntityContext="true" offlineCapable="true"
+        supportedPlatform="Web"
+        xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+    <name>React Gauge</name>
+    <description>A fully customizable Gauge Chart / Speedometer based on D3 and React.</description>
+    <icon>
+
+    	iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAA
+	ACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAB3RJTU
+	UH4AsJDSAJNMjA7AAAA1xJREFUSMft1U2IlVUYB/Dfed9737nTjNiMjjFaI0MxOllJIiRBUIs+MJJyIbkILWiij0VFkqu
+	KFkUtWhhFJRqmprlQoiSoRR+URfmBRImQIWWNjjWkTjNz5977nhbdO84MKbQL8lkdnvOc5//8z3PO/+GC/dcsnG+z9sQi
+	p1es1PT6a0J5lNZ2Yc1WoetK8tp4XJIkisXiOfMk/+QcWj3XcN8VxvqPKz3/HEkoYa4kLBbcgCXowXTI81y5XDY6OmrVq
+	lXnZ3Kkb4HZp05SzISB38WO9svl+TIx3ibPe7VObw9rtxdD98JcXjuDo/gc7+IrlCHGqFQqjectNBbx5btU1u9SW9ApJq
+	FN+/Q+1eoDYuwWwrAQjshrB1TKgyhiDubhMfThPbyIAyEEY2NjsiybzKTSS7W3jYtaelSrL8nz24VwQghvS5OdsZgdMq3
+	1VPO6b6tjtTyoVUt1oJuwGtfjZ6zFNsRCoSBN079BRlZ0kBYoFHpUKpvk+RJJsluh8HS25di+sZWdYrFIkgiPb5C0dIh7
+	dgl3PEJzK7TX2axFikexAbIsE0bu62ZsjBDaVSqb5XGpEDbGLFsTqtXB2N4mnPwNsjrzcp18C0bidwN5ur/hsgKv1B/US
+	nwIScwy6f5fqFYflMelkuR9WbYmxHxQjA2Adjxcr7ADXbgHxbBg1sS3swNPohXP4hJIwukzatfO6ZHHPiH8Kk2fUq0Oql
+	Y1bz/eONyLUQxiEZbjmwarpqamiUCbsRXX1dlIDA+T53eKsUsIW5KfBg7ElpLStmUTDx7HbMzCQgyhv37/pgBV8Gq9oLs
+	xM4kzZrSI8VYhDEnTnfllM4VKRQjrJ4L8iDewD01oqzf6Fthzc9tUoIP4FNdgcRIqlS4xzsfhmBUPx6YmzZuOTf2tsV7ZQ
+	nxUb/rHmA/zphXOxofQYPMpmrEkkdcuRYcQjsbZnae1tEzWrzi+vBHf42ucqP+PvfDCoT/HgyZo2A+NfiY4Iwm7peGT4lt
+	f5vHi1sniFhAjfIEPkGMj1tUlxTNXtU5l0rjid3AwDD/UnUiSNBazPN17qLb5s+j+s4HivZ1GhmpCOLeMl3YMTPKVy+XGV
+	oJYEEOuFvOgqvIH/cuvnpzkzf5/PT9qtZo0TSNqF6bp/9j+AqEsK/sk22Q4AAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE2LTE
+	xLTA5VDEzOjMyOjEwKzAxOjAwrrLs8AAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxNi0xMS0wOVQxMzozMjowOSswMTowMIbdE
+	QEAAAAZdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuMTJDBGvsAAAAAElFTkSuQmCC
+
+    </icon>
+
+    <properties>
+        <propertyGroup caption="General">
+            <propertyGroup caption="Appearance">
+                <property key="size" type="integer" required="true" defaultValue="400">
+                    <caption>Size</caption>
+                    <description>The size of the gauge.</description>
+                </property>
+                 <property key="dimensionUnit" type="string" required="true" defaultValue="px">
+                    <caption>Dimension Unit</caption>
+                    <description>Default to px for width/height. Possible values - "em" , "ex" , "px" , "in" , "cm" , "mm" , "pt" , ,"pc" ... Please refer to specification for more details</description>
+                </property> 
+                 <property key="fluidWidth" type="boolean" required="true" defaultValue="false">
+                    <caption>Fluid Width</caption>
+                    <description>If true takes the width of the parent component.</description>
+                </property>               
+            </propertyGroup>
+            <propertyGroup caption="Data source">
+                <property key="valueAttr" type="attribute" required="true" defaultValue="">
+                    <caption>Value</caption>
+                    <description>The value the needle will be pointing at.</description>
+                    <attributeTypes>
+                        <attributeType name="Decimal" />
+                    </attributeTypes>
+                </property>
+                <property key="minValueAttr" type="attribute" required="true">
+                    <caption>Minimum Value</caption>
+                    <description>Minimum value for the arc of the gauge.</description>
+                    <attributeTypes>
+                        <attributeType name="Decimal" />
+                    </attributeTypes>
+                </property>
+                <property key="maxValueAttr" type="attribute" required="true">
+                    <caption>Maximum Value</caption>
+                    <description>Maximum value for the arc of the gauge.</description>
+                    <attributeTypes>
+                        <attributeType name="Decimal" />
+                    </attributeTypes>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Label">
+                <property key="displayValue" type="boolean" defaultValue="true">
+                        <caption>Display value</caption>
+                        <description>Decide whether the value will be displayed inside the arc or not.</description>
+                </property>
+                <property key="rounding" type="boolean" required="true" defaultValue="false">
+                    <caption>Rounding</caption>
+                    <description>Decide whether the decimal values should be rounded to integer level (via Math.round).</description>
+                </property>
+                <property key="textColor" type="string" required="false" defaultValue="#816c6a">
+                    <caption>Text Color</caption>
+                    <description>The color being used in the ticks and display value.</description>
+                </property>
+                <property key="currentValueText" type="string" required="true" defaultValue="${value}">
+                    <caption>Label Formatting</caption>
+                    <description>Should be provided a placeholder string which will be replaced with current value. For example: "Current Value: #{value}"</description>
+                </property>
+                <property key="paddingLabelVertical" type="integer" required="true" defaultValue="5">
+                    <caption>Label V Padding</caption>
+                    <description>Provides top/bottom space for the current value label text below the needle. Takes a number (without explicit unit, unit will be taken from dimensionUnit config which defaults to px)</description>
+                </property>
+            </propertyGroup>
+        </propertyGroup>
+        <propertyGroup caption="Arc">
+            <propertyGroup caption="Appearance">
+                <property key="arcWidth" type="integer" required="true" defaultValue="40">
+                    <caption>Arc Width</caption>
+                    <description>The width of the arc sections. Use a number between 0 (no line/dot) and 100 (circle filled). Default = 40</description>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Custom Ranges">
+                <property key="rangeArray" type="object" isList="true" required="false">
+                    <caption>Color Gauge Sections</caption>
+                    <description>Set colors per sections of the gauge. Irrelevant of what minimum and maximum value are set, stick to a percentage from 0 to 100 here.</description>
+                    <properties>
+                        <propertyGroup caption="Range Entries">
+                            <property key="rangeStart" type="integer" defaultValue="0">
+                                <caption>Range Start</caption>
+                                <description>The starting percentage of this section of the gauge.</description>
+                            </property>
+                            <property key="rangeEnd" type="integer" defaultValue="10">
+                                <caption>Range End</caption>
+                                <description>The ending percentage of this section of the gauge.</description>
+                            </property>
+                            <property key="colorSection" type="string" defaultValue="F9F9F9">
+                                <caption>Color</caption>
+                                <description>The color for the section. 
+                                
+                                Example colors: Red: #F02828, Orange: #FE6A00, Yellow: #E8DD11, Lightgreen: #82E042, Green: #089F50</description>
+                            </property>
+                        </propertyGroup>
+                    </properties>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Gradient">
+                <property key="arcGradientColor" type="boolean" required="true" defaultValue="false">
+                    <caption>Gradient Color</caption>
+                    <description>If set to 'Yes' will create a smooth gradient color between all used color sections.</description>
+                </property>
+                <property key="arcGradientNoOfSegments" type="integer" required="true" defaultValue="500">
+                    <caption>Gradient No of Segments</caption>
+                    <description>If gradient is set to 'Yes', determine here how many segments are needed. 100 will still show color differences, 500 is smooth gradient.</description>
+                </property>
+                <property key="arcGradientMaxSegmentLabels" type="integer" required="true" defaultValue="10">
+                    <caption>Gradient Max Segment Labels</caption>
+                    <description>If gradient is set to 'Yes', Limit the amount of labels to be shown here. Else would show label for every segment and becomes unreadable wih more than 30.</description>
+                </property>
+            </propertyGroup>
+        </propertyGroup>
+        <propertyGroup caption="Needle">
+            <propertyGroup caption="Appearance">
+                <property key="needleColor" type="string" required="false" defaultValue="#808080">
+                    <caption>Needle Color</caption>
+                    <description>The color being used in the Needle</description>
+                </property>
+                <property key="needleHeightRatio" type="integer" required="true" defaultValue="80">
+                    <caption>Needle Height Ratio</caption>
+                    <description>The length of the Needle as a percentage of total height, so only a value between 0 and 100 is valid.</description>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Animation">
+                <property key="needleTransition" type="enumeration" required="true" defaultValue="easeLinear">
+                    <caption>Easing Duration</caption>
+                    <description>The duration of the animation in ms. So, 1000 is 1 second.</description>
+                    <enumerationValues>
+                        <enumerationValue key="easeLinear">linear</enumerationValue>
+                        <enumerationValue key="easeQuadInOut">quad</enumerationValue>
+                        <enumerationValue key="easeCubicInOut">cubic</enumerationValue>	
+                        <enumerationValue key="easeSinInOut">sin</enumerationValue>	
+                        <enumerationValue key="easeExpInOut">exp</enumerationValue>	
+                        <enumerationValue key="easeCircleInOut">circle</enumerationValue>	
+                        <enumerationValue key="easeElasticInOut">elastic</enumerationValue>	
+                        <enumerationValue key="easeBackInOut">back</enumerationValue>	
+                        <enumerationValue key="easeBounceInOut">bounce</enumerationValue>						
+                    </enumerationValues>
+                </property>
+                <property key="needleTransitionDuration" type="integer" required="true" defaultValue="2000">
+                    <caption>Easing Duration</caption>
+                    <description>The duration of the animation of the needle in ms. So, 1000 is 1 second.</description>
+                </property>
+            </propertyGroup>
+        </propertyGroup>
+        <propertyGroup caption="Interaction">
+            <property key="onClickAction" type="action" required="false">
+                <caption>Action</caption>
+                <description>The action to execute on click.</description>
+            </property>
+        </propertyGroup>
+    </properties>
+</widget>
