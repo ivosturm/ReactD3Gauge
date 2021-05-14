@@ -36,10 +36,10 @@ Arc - Gradient
 
 
 ## Demo project
-[link to sandbox]
+https://d3gaugechart.mxapps.io/index.html?profile=Responsive
 
 ## Issues, suggestions and feature requests
-[link to GitHub issues]
+https://github.com/ivosturm/ReactD3Gauge/issues
 
 ## Development and contribution
 This widget uses the react-d3-speedometer library, see https://www.npmjs.com/package/react-d3-speedometer for more details.
