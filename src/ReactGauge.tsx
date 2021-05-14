@@ -64,6 +64,7 @@ export default class ReactGauge extends Component<ReactGaugeContainerProps> {
             return (
                 <div
                     className={"react-gauge-chart-error-div alert alert-danger mx-validation-message"}
+                    style={{width : this.props.width + 'px',height : (0.6 * this.props.width) + 'px'}}
                 >Gauge could not be generated as Gauge Sections are ill formatted! Error message: {rangeCheckMessage}</div>
             )
 
@@ -105,7 +106,7 @@ export default class ReactGauge extends Component<ReactGaugeContainerProps> {
                 onClick={() => this.executeAction()}
                 style={style}      
                 ><GaugeChartContainer 
-                    size={this.props.size}
+                    width={this.props.width}
                     dimensionUnit={this.props.dimensionUnit}
                     fluidWidth={this.props.fluidWidth}
                     value={value}

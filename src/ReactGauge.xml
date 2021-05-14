@@ -30,9 +30,9 @@
     <properties>
         <propertyGroup caption="General">
             <propertyGroup caption="Appearance">
-                <property key="size" type="integer" required="true" defaultValue="400">
+                <property key="width" type="integer" required="true" defaultValue="400">
                     <caption>Size</caption>
-                    <description>The size of the gauge.</description>
+                    <description>The width of the gauge. Height will be set by 60 % of width of gauge, since it is half a circle (50 %) + some spacing is needed for the label (10 % reserved)</description>
                 </property>
                  <property key="dimensionUnit" type="string" required="true" defaultValue="px">
                     <caption>Dimension Unit</caption>

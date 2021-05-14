@@ -25,7 +25,7 @@ export interface ReactGaugeContainerProps {
     class: string;
     style?: CSSProperties;
     tabIndex?: number;
-    size: number;
+    width: number;
     dimensionUnit: string;
     fluidWidth: boolean;
     valueAttr: EditableValue<BigJs.Big>;
@@ -51,7 +51,7 @@ export interface ReactGaugeContainerProps {
 export interface ReactGaugePreviewProps {
     class: string;
     style: string;
-    size: number | null;
+    width: number | null;
     dimensionUnit: string;
     fluidWidth: boolean;
     valueAttr: string;

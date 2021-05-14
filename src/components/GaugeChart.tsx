@@ -2,7 +2,7 @@ import { Component, createElement } from "react";
 import ReactSpeedometer , { Transition }from "react-d3-speedometer";
 
 export interface GaugeChartProps {
-    size: number;
+    width: number;
     dimensionUnit:string;
     fluidWidth:boolean;
     value: number;
@@ -34,8 +34,8 @@ export class GaugeChartContainer extends Component<GaugeChartProps> {
                     minValue={this.props.minValue}
                     textColor={this.props.textColor}
                     needleColor={this.props.needleColor}
-                    height={this.props.size}
-                    width={this.props.size}
+                    height={this.props.width * 0.6}
+                    width={this.props.width}
                     dimensionUnit={this.props.dimensionUnit}
                     segments={this.props.arcGradientNoOfSegments}
                     maxSegmentLabels={this.props.arcGradientMaxSegmentLabels}
